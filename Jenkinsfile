@@ -3,17 +3,20 @@ pipeline {
     stages {
         stage("Build"){
             steps {
-                echo("Hello Mother fucker!")
+                echo("start build")
+				sh("./mvnw clean compile test-compile")
+				echo("finish build")
             }
         }
         stage("test"){
             steps {
-                echo("Hello Mother fucker!- 2")
+                echo("Hello Test")
+				sh("./mvnw test")
             }
         }
         stage("Deploy"){
             steps {
-                echo("Hello Mother fucker! - 3")
+                echo("Hello deploy")
             }
         }
     }
