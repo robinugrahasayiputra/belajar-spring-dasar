@@ -7,4 +7,19 @@ pipeline {
             }
         }
     }
+    
+    post {
+		always {
+			echo ("after all this time? Always!")
+		}
+		success {
+			echo ("success")
+		}
+		failure {
+			echo ("failure")
+		}
+		cleanup {
+			echo("cleanup")
+		}
+	}
 }
