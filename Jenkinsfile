@@ -4,10 +4,6 @@ pipeline {
         stage("Build"){
             steps {
                 echo("start build")
-				  sh '''
-            chmod +x mvnw
-            ./mvnw clean compile test-compile
-        '''
             }
         }
         stage("test"){
