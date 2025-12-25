@@ -9,7 +9,14 @@ pipeline {
         stage("test"){
             steps {
                 echo("Hello Test")
-				sh("./mvnw test")
+                script {
+					def data = [
+						"firstName" : "robb",
+						"lastName" : "stark"
+					]
+					
+					writeJSON(file:"data.json", json:data)
+				}
             }
         }
         stage("Deploy"){
